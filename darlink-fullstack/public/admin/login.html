@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion admin — DarLink Tunisia</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="login-shell">
+    <div class="login-card">
+      <div class="mark">DL</div>
+      <h2 style="margin-bottom:6px;">Espace administrateur</h2>
+      <p style="margin-bottom:24px;">DarLink Tunisia — gestion des biens et des messages.</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label>Nom d'utilisateur</label>
+          <input type="text" id="username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <input type="password" id="password" required autocomplete="current-password">
+        </div>
+        <p class="login-error" id="login-error"></p>
+        <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">Se connecter</button>
+      </form>
+      <p class="hint" style="margin-top:20px;"><a href="../index.html">&larr; Retour au site</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('login-error');
+      errorEl.classList.remove('show');
+
+      try {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          window.location.href = 'dashboard.html';
+        } else {
+          errorEl.textContent = data.error || 'Erreur de connexion.';
+          errorEl.classList.add('show');
+        }
+      } catch (err) {
+        errorEl.textContent = 'Erreur réseau. Vérifiez que le serveur est démarré.';
+        errorEl.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>

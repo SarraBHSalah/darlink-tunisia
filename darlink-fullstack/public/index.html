@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarLink Tunisia — Gestion locative pour propriétaires à l'étranger</title>
+<meta name="description" content="DarLink Tunisia accompagne les propriétaires tunisiens vivant à l'étranger dans la location, le suivi et la gestion de leurs biens immobiliers en Tunisie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">DL</span>
+      <span>DarLink Tunisia<span class="logo-sub">Property Management</span></span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" data-page="home" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="biens.html" data-page="biens" data-i18n="nav.properties">Nos biens</a></li>
+        <li><a href="services.html" data-page="services" data-i18n="nav.services">Nos services</a></li>
+        <li><a href="apropos.html" data-page="apropos" data-i18n="nav.about">À propos</a></li>
+        <li><a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button data-lang="fr">FR</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="contact.html" class="btn btn-outline-navy btn-sm"><span class="txt" data-i18n="nav.contactBtn">Nous contacter</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1 data-i18n="home.hero.title">Votre bien en Tunisie, notre présence sur place.</h1>
+    <p class="lead" data-i18n="home.hero.subtitle">Vous vivez à l'étranger et vous possédez un appartement ou une maison en Tunisie ? Nous vous accompagnons dans la location, le suivi et la gestion de votre bien.</p>
+    <div class="hero-actions">
+      <a href="biens.html" class="btn btn-primary" data-i18n="home.hero.cta1">Voir nos biens</a>
+      <a href="contact.html" class="btn btn-outline" data-i18n="home.hero.cta2">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.intro.eyebrow">À propos de DarLink Tunisia</span>
+      <h2 data-i18n="home.intro.title">Votre intermédiaire de confiance en Tunisie</h2>
+      <p data-i18n="home.intro.text">DarLink Tunisia accompagne les propriétaires tunisiens résidant à l'étranger dans la gestion complète de leurs biens : location, suivi, entretien et relation avec les locataires. Une présence locale sérieuse pour une tranquillité d'esprit totale, où que vous soyez dans le monde.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--beige">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.featured.eyebrow">Sélection</span>
+      <h2 data-i18n="home.featured.title">Biens à la une</h2>
+      <p data-i18n="home.featured.subtitle">Un aperçu de nos appartements et maisons disponibles à la location partout en Tunisie.</p>
+    </div>
+    <div class="grid grid-3" id="featured-grid"></div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="biens.html" class="btn btn-primary" data-i18n="common.viewAllProperties">Voir tous nos biens</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.services.eyebrow">Nos services</span>
+      <h2 data-i18n="home.services.title">Une gestion complète, de A à Z</h2>
+      <p data-i18n="home.services.subtitle">De la recherche de locataires à l'entretien du logement, nous nous occupons de tout pour vous.</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="service-card">
+        <div class="icon">🏠</div>
+        <h3 data-i18n="services.s1.title">Location de biens</h3>
+        <p data-i18n="services.s1.text">Mise en location avec un loyer juste et compétitif selon le marché local.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔍</div>
+        <h3 data-i18n="services.s2.title">Recherche de locataires</h3>
+        <p data-i18n="services.s2.text">Sélection rigoureuse de locataires sérieux et fiables.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🛠</div>
+        <h3 data-i18n="services.s7.title">Coordination des réparations</h3>
+        <p data-i18n="services.s7.text">Prise en charge des artisans et interventions nécessaires.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">📋</div>
+        <h3 data-i18n="services.s6.title">Suivi et gestion</h3>
+        <p data-i18n="services.s6.text">Gestion quotidienne, loyers et démarches administratives.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:36px;">
+      <a href="services.html" class="btn btn-outline-navy" data-i18n="common.readMore">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="home.why.eyebrow">Pourquoi nous choisir</span>
+      <h2 data-i18n="home.why.title">La sérénité d'une présence locale</h2>
+      <p data-i18n="home.why.subtitle">Parce que gérer un bien à distance ne devrait jamais être une source de stress.</p>
+    </div>
+    <div class="grid grid-2 reveal" style="max-width:900px;margin:0 auto;">
+      <div class="feature-row">
+        <div class="num">01</div>
+        <div><h3 data-i18n="home.why.1.title">Présence physique en Tunisie</h3><p data-i18n="home.why.1.text">Notre équipe est sur place pour visiter, vérifier et entretenir votre bien.</p></div>
+      </div>
+      <div class="feature-row">
+        <div class="num">02</div>
+        <div><h3 data-i18n="home.why.2.title">Transparence totale</h3><p data-i18n="home.why.2.text">Vous êtes informé à chaque étape de la gestion de votre bien.</p></div>
+      </div>
+      <div class="feature-row">
+        <div class="num">03</div>
+        <div><h3 data-i18n="home.why.3.title">Locataires sérieux</h3><p data-i18n="home.why.3.text">Nous sélectionnons et vérifions chaque locataire.</p></div>
+      </div>
+      <div class="feature-row">
+        <div class="num">04</div>
+        <div><h3 data-i18n="home.why.4.title">Communication simple</h3><p data-i18n="home.why.4.text">Un seul interlocuteur, joignable à tout moment.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center reveal">
+    <h2 data-i18n="home.cta.title">Prêt à confier votre bien en toute confiance ?</h2>
+    <p style="max-width:560px;margin:0 auto 32px;" data-i18n="home.cta.subtitle">Discutons de votre projet — que vous soyez propriétaire à l'étranger ou à la recherche d'un logement en Tunisie.</p>
+    <div class="hero-actions" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-primary" data-i18n="home.cta.btn1">Nous contacter</a>
+      <a href="#" data-whatsapp="Bonjour DarLink Tunisia, j'aimerais avoir plus d'informations." class="btn btn-whatsapp" data-i18n="home.cta.btn2">Discuter sur WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">DarLink Tunisia</div>
+        <p data-i18n="footer.desc">Intermédiaire de confiance entre propriétaires tunisiens vivant à l'étranger et locataires en Tunisie.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.nav">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="biens.html" data-i18n="nav.properties">Nos biens</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Nos services</a></li>
+          <li><a href="apropos.html" data-i18n="nav.about">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="nav.contact">Contact</h4>
+        <ul>
+          <li><a href="contact.html" data-i18n="nav.contactBtn">Nous contacter</a></li>
+          <li><a href="tel:" data-phone-link data-phone-display>+216 98 785 397</a></li>
+          <li><a href="mailto:" data-email-display>contact@darlinktunisia.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="contact.info.address">Adresse</h4>
+        <p data-i18n="contact.info.addressValue">Les Berges du Lac, Tunis, Tunisie</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year"></span> DarLink Tunisia. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" data-whatsapp="Bonjour DarLink Tunisia, j'aimerais avoir plus d'informations." aria-label="WhatsApp">💬</a>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/properties.js"></script>
+</body>
+</html>

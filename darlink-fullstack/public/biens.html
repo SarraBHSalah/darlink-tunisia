@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos biens — DarLink Tunisia</title>
+<meta name="description" content="Découvrez notre sélection d'appartements et de maisons à louer partout en Tunisie : Tunis, Sousse, Hammamet, Sfax, Djerba et plus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="biens">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">DL</span>
+      <span>DarLink Tunisia<span class="logo-sub">Property Management</span></span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" data-page="home" data-i18n="nav.home">Accueil</a></li>
+        <li><a href="biens.html" data-page="biens" data-i18n="nav.properties">Nos biens</a></li>
+        <li><a href="services.html" data-page="services" data-i18n="nav.services">Nos services</a></li>
+        <li><a href="apropos.html" data-page="apropos" data-i18n="nav.about">À propos</a></li>
+        <li><a href="contact.html" data-page="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button data-lang="fr">FR</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="contact.html" class="btn btn-outline-navy btn-sm"><span class="txt" data-i18n="nav.contactBtn">Nous contacter</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section--tight" style="background:#f4ede0;">
+  <div class="container text-center">
+    <h1 data-i18n="properties.hero.title">Nos biens</h1>
+    <p style="max-width:600px;margin:0 auto;" data-i18n="properties.hero.subtitle">Découvrez notre sélection d'appartements et de maisons à louer partout en Tunisie.</p>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container">
+    <div class="filters">
+      <div class="field">
+        <label data-i18n="properties.filter.city">Ville</label>
+        <select id="filter-city"></select>
+      </div>
+      <div class="field">
+        <label data-i18n="properties.filter.type">Type de bien</label>
+        <select id="filter-type"></select>
+      </div>
+      <div class="field">
+        <label data-i18n="properties.filter.price">Prix max (TND/mois)</label>
+        <input type="number" id="filter-price" min="0" step="50" placeholder="3000">
+      </div>
+      <div class="field">
+        <label data-i18n="properties.filter.bedrooms">Chambres min.</label>
+        <select id="filter-bedrooms">
+          <option value="">-</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+      <div class="field">
+        <button id="filter-reset" class="btn btn-outline-navy btn-block" data-i18n="properties.filter.reset">Réinitialiser</button>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <span class="count" id="results-count"></span>
+    </div>
+
+    <div class="grid grid-3" id="properties-grid"></div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</section>
+
+<section class="section text-center" style="padding-top:0;">
+  <div class="container">
+    <h2 data-i18n="home.cta.title">Prêt à confier votre bien en toute confiance ?</h2>
+    <a href="contact.html" class="btn btn-primary" data-i18n="home.cta.btn1">Nous contacter</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">DarLink Tunisia</div>
+        <p data-i18n="footer.desc">Intermédiaire de confiance entre propriétaires tunisiens vivant à l'étranger et locataires en Tunisie.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.nav">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="biens.html" data-i18n="nav.properties">Nos biens</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Nos services</a></li>
+          <li><a href="apropos.html" data-i18n="nav.about">À propos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="nav.contact">Contact</h4>
+        <ul>
+          <li><a href="contact.html" data-i18n="nav.contactBtn">Nous contacter</a></li>
+          <li><a href="tel:" data-phone-link data-phone-display>+216 98 785 397</a></li>
+          <li><a href="mailto:" data-email-display>contact@darlinktunisia.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="contact.info.address">Adresse</h4>
+        <p data-i18n="contact.info.addressValue">Les Berges du Lac, Tunis, Tunisie</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span class="footer-year"></span> DarLink Tunisia. <span data-i18n="footer.rights">Tous droits réservés.</span></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" data-whatsapp="Bonjour DarLink Tunisia, j'aimerais avoir plus d'informations." aria-label="WhatsApp">💬</a>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/properties.js"></script>
+</body>
+</html>

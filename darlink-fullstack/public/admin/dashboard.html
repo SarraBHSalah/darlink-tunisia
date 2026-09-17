@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord — DarLink Tunisia</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<header class="admin-header">
+  <div class="brand"><span class="mark">DL</span> DarLink Tunisia — Admin</div>
+  <div class="who">
+    <span id="who-username"></span>
+    <button id="btn-logout">Déconnexion</button>
+  </div>
+</header>
+
+<div class="admin-shell">
+  <div class="admin-tabs">
+    <button data-tab="properties" class="active">Biens (<span id="count-properties">0</span>)</button>
+    <button data-tab="leads">Messages (<span id="count-leads">0</span>)</button>
+    <button data-tab="settings">Paramètres</button>
+  </div>
+
+  <!-- PROPERTIES -->
+  <section class="admin-panel active" id="panel-properties">
+    <div class="admin-toolbar">
+      <h2>Gestion des biens</h2>
+      <button class="btn btn-primary btn-sm" id="btn-add-property">+ Ajouter un bien</button>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Type</th><th>Ville</th><th>Quartier</th><th>Prix</th><th>Ch.</th><th>Disponibilité</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="properties-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LEADS -->
+  <section class="admin-panel" id="panel-leads">
+    <div class="admin-toolbar">
+      <h2>Messages reçus</h2>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Date</th><th>Nom</th><th>Téléphone</th><th>Email</th><th>Sujet</th><th>Message</th><th>Statut</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="admin-panel" id="panel-settings">
+    <div class="admin-toolbar"><h2>Paramètres du compte</h2></div>
+    <div class="contact-form" style="max-width:480px;">
+      <h3>Changer le mot de passe</h3>
+      <form id="password-form">
+        <div class="form-group">
+          <label>Mot de passe actuel</label>
+          <input type="password" id="current-password" required>
+        </div>
+        <div class="form-group">
+          <label>Nouveau mot de passe (8 caractères min.)</label>
+          <input type="password" id="new-password" required minlength="8">
+        </div>
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- Property add/edit modal -->
+<div class="modal-overlay" id="property-modal">
+  <div class="modal-box">
+    <h3 id="modal-title">Ajouter un bien</h3>
+    <form id="property-form">
+      <input type="hidden" id="p-id">
+      <div class="form-grid">
+        <div><label>Type (FR)</label><input id="p-type_fr" required placeholder="S+2, Villa..."></div>
+        <div><label>Type (EN)</label><input id="p-type_en" required placeholder="2-Bedroom Apartment"></div>
+
+        <div><label>Ville (FR)</label><input id="p-city_fr" required></div>
+        <div><label>Ville (EN)</label><input id="p-city_en" required></div>
+
+        <div><label>Quartier (FR)</label><input id="p-neighborhood_fr"></div>
+        <div><label>Quartier (EN)</label><input id="p-neighborhood_en"></div>
+
+        <div><label>Prix (TND/mois)</label><input id="p-price" type="number" required></div>
+        <div><label>Chambres</label><input id="p-bedrooms" type="number" required></div>
+
+        <div><label>Salles de bain</label><input id="p-bathrooms" type="number"></div>
+        <div><label>Surface (m²)</label><input id="p-area" type="number"></div>
+
+        <div><label>Étage (FR)</label><input id="p-floor_fr"></div>
+        <div><label>Étage (EN)</label><input id="p-floor_en"></div>
+
+        <div><label>Disponibilité (FR)</label><input id="p-availability_fr"></div>
+        <div><label>Disponibilité (EN)</label><input id="p-availability_en"></div>
+
+        <div>
+          <label>Disponible immédiatement ?</label>
+          <select id="p-available_now"><option value="true">Oui</option><option value="false">Non</option></select>
+        </div>
+        <div></div>
+
+        <div class="full"><label>Description courte (FR)</label><textarea id="p-description_fr"></textarea></div>
+        <div class="full"><label>Description courte (EN)</label><textarea id="p-description_en"></textarea></div>
+
+        <div class="full"><label>Description complète (FR)</label><textarea id="p-full_description_fr"></textarea></div>
+        <div class="full"><label>Description complète (EN)</label><textarea id="p-full_description_en"></textarea></div>
+
+        <div class="full"><label>Équipements FR (séparés par des virgules)</label><input id="p-features_fr" placeholder="Climatisation, Parking privé, Balcon"></div>
+        <div class="full"><label>Équipements EN (séparés par des virgules)</label><input id="p-features_en" placeholder="Air conditioning, Private parking, Balcony"></div>
+
+        <div class="full">
+          <label>Photos du bien</label>
+          <div class="photo-upload-zone" id="photo-drop-zone">
+            <input type="file" id="p-photo-input" accept="image/png, image/jpeg, image/webp, image/gif" multiple hidden>
+            <button type="button" class="btn btn-outline-navy btn-sm" id="btn-choose-photos">+ Choisir des photos</button>
+            <span class="hint">JPG, PNG, WEBP ou GIF — 5 Mo max par photo</span>
+          </div>
+          <div class="photo-thumbs" id="photo-thumbs"></div>
+          <p class="hint" id="upload-status"></p>
+        </div>
+
+        <div><label>Adresse (FR)</label><input id="p-address_fr"></div>
+        <div><label>Adresse (EN)</label><input id="p-address_en"></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline-navy" id="btn-cancel-modal">Annuler</button>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
