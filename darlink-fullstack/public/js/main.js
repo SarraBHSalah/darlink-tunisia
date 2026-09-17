@@ -1,8 +1,8 @@
 // ===========================================================
 // DarLink Tunisia — shared behaviour (nav, lang switch, footer)
 // ===========================================================
-const WHATSAPP_NUMBER = "21698785397";
-const CONTACT_PHONE_DISPLAY = "+216 98 785 397";
+const WHATSAPP_NUMBER = "21698607356";
+const CONTACT_PHONE_DISPLAY = "+216 98 607 356";
 const CONTACT_EMAIL = "contact@darlinktunisia.com";
 
 function whatsappLink(message) {
